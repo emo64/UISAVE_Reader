@@ -2,16 +2,16 @@
 
 namespace FFXivDatReader.ConfigSections
 {
-    internal class ConfigSectionMailHistory : ConfigSection
+    internal class ConfigSectionRetainer : ConfigSection
     {
-        public ConfigSectionMailHistory(uint fileOffsetBytes, byte[] sectionHeader, byte[] sectionData) :
+        public ConfigSectionRetainer(uint fileOffsetBytes, byte[] sectionHeader, byte[] sectionData) :
             base(fileOffsetBytes, sectionHeader, sectionData)
         {
         }
 
         protected override void Read()
         {
-            // throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public override string ToString()

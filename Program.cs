@@ -1,20 +1,14 @@
 ﻿using System;
 
-namespace UISAVE_Reader
+namespace FFXivDatReader
 {
-	class Program
-	{
-		static void Main( string[] args )
-		{
-			string filePath = Console.ReadLine();
-			UISAVE file = new UISAVE( filePath );
-			foreach( ConfigSection section in file.Sections )
-			{
-				Console.WriteLine( section.ToString() );
-				
-			}
-
-			Console.ReadLine();
-		}
-	}
+    internal class Program
+    {
+        private static void Main(string[] args)
+        {
+            const string filePath = @"E:\Final Fantasy XIV\最终幻想XIV\game\My Games\FINAL FANTASY XIV - A Realm Reborn\FFXIV_CHR00438D8134C3D083\UISAVE.DAT";
+            // const string filePath2 = @"E:\Final Fantasy XIV\最终幻想XIV\game\My Games\FINAL FANTASY XIV - A Realm Reborn\FFXIV_CHR00438D8134C3D083\ITEMFDR.DAT";
+            new Config(filePath).printContent();
+        }
+    }
 }

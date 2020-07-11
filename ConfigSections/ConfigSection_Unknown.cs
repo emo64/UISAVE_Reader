@@ -1,24 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text;
 
-namespace UISAVE_Reader.ConfigSections
+namespace FFXivDatReader.ConfigSections
 {
-	class ConfigSection_Unknown : ConfigSection
-	{
-		public ConfigSection_Unknown( uint fileOffset_Bytes, byte[] sectionHeader, byte[] sectionData ) :
-			base( fileOffset_Bytes, sectionHeader, sectionData )
-		{
-		}
+    internal class ConfigSectionUnknown : ConfigSection
+    {
+        public ConfigSectionUnknown(uint fileOffsetBytes, byte[] sectionHeader, byte[] sectionData) :
+            base(fileOffsetBytes, sectionHeader, sectionData)
+        {
+        }
 
-		protected override void Read()
-		{
-		}
+        protected override void Read()
+        {
+            
+        }
 
-		public override string ToString()
-		{
-			return "Unknown Section Type (ID: " + SectionID.ToString() + ", Offset in File (includes section header): 0x" + FileOffset.ToString( "X" ) + ", Length: 0x" + SectionData.Length.ToString( "X" ) + " bytes (excluding section header))";
-		}
-	}
+        public override string ToString()
+        {
+            return "Unknown Section Type (ID: " + SectionID + ", Offset in File (includes section header): 0x" +
+                   FileOffset.ToString("X") + ", Length: 0x" + SectionData.Length.ToString("X") +
+                   " bytes (excluding section header))";
+            // return "Unknown Section Type (ID: " + SectionID + ", Offset in File (includes section header): 0x" +
+            //        FileOffset.ToString("X") + ", Length: 0x" + SectionData.Length.ToString("X") +
+            //        " bytes (excluding section header))"; + $"\n{Encoding.UTF8.GetString(SectionData).Replace(" ", "")}";
+        }
+    }
 }
